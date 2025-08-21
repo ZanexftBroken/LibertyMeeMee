@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liberty Mee Mee - Plants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(to right, #2d5016, #4f772d);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            color: #fff;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .intro h2 {
+            color: #2d5016;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #475569;
+        }
+        
+        .plants-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .plant-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .plant-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .plant-img {
+            height: 220px;
+            background-color: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #2d5016;
+            font-size: 1.5rem;
+        }
+        
+        .plant-info {
+            padding: 1.5rem;
+        }
+        
+        .plant-info h3 {
+            color: #2d5016;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .plant-info p {
+            color: #475569;
+            margin-bottom: 1rem;
+        }
+        
+        .price {
+            font-weight: bold;
+            color: #2d5016;
+            font-size: 1.2rem;
+        }
+        
+        .contact-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-section h2 {
+            color: #2d5016;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+            min-width: 250px;
+        }
+        
+        .contact-method i {
+            font-size: 2rem;
+            color: #2d5016;
+        }
+        
+        .contact-method h3 {
+            color: #334155;
+        }
+        
+        .contact-method p {
+            color: #475569;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: #2d5016;
+            color: white;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            transition: background 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #4f772d;
+        }
+        
+        footer {
+            background: linear-gradient(to right, #2d5016, #4f772d);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .intro h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <i class="fas fa-leaf logo"></i>
+            <h1>Liberty Mee Mee</h1>
+        </div>
+        <p>Bringing Nature to Your Home</p>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <h2>Welcome to Liberty Mee Mee Plants</h2>
+            <p>We offer a wide variety of beautiful indoor and outdoor plants to bring life and freshness to your space. Our plants are carefully selected and nurtured to ensure they thrive in your home or office.</p>
+        </section>
+
+        <section class="plants-grid">
+            <div class="plant-card">
+                <div class="plant-img">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <div class="plant-info">
+                    <h3>Monstera Deliciosa</h3>
+                    <p>Also known as the Swiss Cheese Plant, with beautiful split leaves that add a tropical touch to any room.</p>
+                    <p class="price">$35.99</p>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-img">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <div class="plant-info">
+                    <h3>Snake Plant</h3>
+                    <p>Extremely hardy and excellent for improving indoor air quality. Perfect for beginners.</p>
+                    <p class="price">$25.99</p>
+                </div>
+            </div>
+
+            <div class="plant-card">
+                <div class="plant-img">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="plant-info">
+                    <h3>Fiddle Leaf Fig</h3>
+                    <p>A popular statement plant with large, glossy leaves. Makes a beautiful focal point in any room.</p>
+                    <p class="price">$49.99</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <div class="contact-method">
+                    <i class="fas fa-phone"></i>
+                    <h3>Call Us</h3>
+                    <p>09 444 555 316</p>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Us</h3>
+                    <p>info@libertymeemee.com</p>
+                </div>
+                
+                <div class="contact-method">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Visit Us</h3>
+                    <p>123 Plant Street, Green City</p>
+                </div>
+            </div>
+            
+            <h3>Follow Us on Social Media</h3>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Liberty Mee Mee Plants. All rights reserved.</p>
+    </footer>
+</body>
+</html>
